@@ -15,5 +15,5 @@ if ! conda env list|grep -q coffea-env; then
   # mamba create --name coffea-env -c conda-forge --strict-channel-priority -y python=3.9 numpy=1.23.5 coffea
   conda env create -f ../histograms/environment.yml
 fi
-conda init
+source /uscms_data/d3/he614/miniforge3/etc/profile.d/conda.sh # replace the path to your installation 
 conda activate coffea-env
