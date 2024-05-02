@@ -160,9 +160,9 @@ Documentation of the used package can be found on the [mgprod github repo](https
 If we want to keep the original weights we can add them to the list of named weights in the NanoGEN config file:
 
 ``` bash
-echo "named_weights = [" >> nanogen_cfg.py
-cat TT01j_tutorial_reweight_card.dat | grep launch | sed 's/launch --rwgt_name=/"/' | sed 's/$/",/' >> nanogen_cfg.py
-echo -e "]\nprocess.genWeightsTable.namedWeightIDs = named_weights\nprocess.genWeightsTable.namedWeightLabels = named_weights" >> nanogen_cfg.py
+echo "named_weights = [" >> nanogen_TT01j2lCARef_cfg.py
+cat TT01j2lCARef_reweight_card.dat | grep launch | sed 's/launch --rwgt_name=/"/' | sed 's/$/",/' >> nanogen_TT01j2lCARef_cfg.py
+echo -e "]\nprocess.genWeightsTable.namedWeightIDs = named_weights\nprocess.genWeightsTable.namedWeightLabels = named_weights" >> nanogen_TT01j2lCARef_cfg.py
 ```
 
 Producing NanoGEN is fairly fast, and a few thousand events can usually be produced locally like
