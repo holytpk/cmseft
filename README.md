@@ -157,8 +157,7 @@ cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
 	     --fileout file:nanoGen.root --conditions 106X_mc2017_realistic_v6 --beamspot Realistic25ns13TeVEarly2017Collision \
 	     --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run2_2017 \ 
 	     --no_exec --mc -n 10 \
-	     --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123;process.particleLevelSequence.remove(process.genParticles2HepMCHiggsVtx);process.particleLeve
-lSequence.remove(process.rivetProducerHTXS);process.particleLevelTables.remove(process.HTXSCategoryTable)"
+	     --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123;process.particleLevelSequence.remove(process.genParticles2HepMCHiggsVtx);process.particleLevelSequence.remove(process.rivetProducerHTXS);process.particleLevelTables.remove(process.HTXSCategoryTable)"
 ```
 
 The CMSSW area that has been set up in the previous step already includes a useful tool that extracts the coefficients of the polynomial fit.
