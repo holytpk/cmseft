@@ -150,16 +150,15 @@ but much faster generation time because the detector simulation and reconstructi
 We will generate a few events directly from the gridpack created in the previous step (no intermediate GEN file is needed!), and use the same pythia fragment as in the GEN step before.
 Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
 
-A cmsRun config file can be created 
-``` bash
 cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
-    --python_filename nanogen_cfg.py --eventcontent NANOAODGEN \
-    --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAOD \
-    --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123" \
-    --fileout file:nanogen_123.root --conditions 106X_mcRun2_asymptotic_v13 \
-    --beamspot Realistic25ns13TeV2016Collision --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run2_2016 --no_exec --mc -n 100
+	     --python_filename nanogen_TT01j2lCARef_cfg.py --eventcontent NANOAODGEN \
+	     --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAOD \
+	     --fileout file:nanoGen.root --conditions 106X_mc2017_realistic_v6 --beamspot Realistic25ns13TeVEarly2017Collision \
+	     --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run2_2017 \ 
+	     --no_exec --mc -n 10 \
+	     --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123;process.particleLevelSequence.remove(process.genParticles2HepMCHiggsVtx);process.particleLeve
+lSequence.remove(process.rivetProducerHTXS);process.particleLevelTables.remove(process.HTXSCategoryTable)"
 
-```
 The CMSSW area that has been set up in the previous step already includes a useful tool that extracts the coefficients of the polynomial fit.
 You'll learn more about the coefficients and how to use them in a later part.
 Documentation of the used package can be found on the [mgprod github repo](https://github.com/TopEFT/mgprod#additional-notes-on-the-production-of-naod-samples).
