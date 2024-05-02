@@ -154,7 +154,7 @@ Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
 cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py \
 	     --python_filename nanogen_TT01j2lCARef_cfg.py --eventcontent NANOAODGEN \
 	     --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAOD \
-	     --fileout file:nanoGen.root --conditions 106X_mc2017_realistic_v6 --beamspot Realistic25ns13TeVEarly2017Collision \
+	     --fileout file:nanogen_TT01j2lCARef_cfg.root --conditions 106X_mcRun2_asymptotic_v13 --beamspot Realistic25ns13TeVEarly2017Collision \
 	     --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run2_2017 \ 
 	     --no_exec --mc -n 10 \
 	     --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123;process.particleLevelSequence.remove(process.genParticles2HepMCHiggsVtx);process.particleLevelSequence.remove(process.rivetProducerHTXS);process.particleLevelTables.remove(process.HTXSCategoryTable)"
