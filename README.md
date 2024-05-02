@@ -151,7 +151,7 @@ We will generate a few events directly from the gridpack created in the previous
 Make sure you are in `cmseft2023/generation/` and have a CMSSW environment set.
 
 ```
-cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py --eventcontent NANOAODGEN --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAOD --fileout file:nanogen_TT01j2lCARef.root --conditions 106X_mc2017_realistic_v6 --beamspot Realistic25ns13TeVEarly2017Collision --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run2_2017 --no_exec --mc -n 10 --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123;process.particleLevelSequence.remove(process.genParticles2HepMCHiggsVtx);process.particleLevelSequence.remove(process.rivetProducerHTXS);process.particleLevelTables.remove(process.HTXSCategoryTable)"
+cmsDriver.py Configuration/GenProduction/python/pythia_fragment.py --python_filename nanogen_TT01j2lCARef_cfg.py --eventcontent NANOAODGEN --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAOD --fileout file:nanogen_TT01j2lCARef.root --conditions 106X_mc2017_realistic_v6 --beamspot Realistic25ns13TeVEarly2017Collision --step LHE,GEN,NANOGEN --geometry DB:Extended --era Run2_2017 --no_exec --mc -n 10 --customise_commands "process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=123;process.particleLevelSequence.remove(process.genParticles2HepMCHiggsVtx);process.particleLevelSequence.remove(process.rivetProducerHTXS);process.particleLevelTables.remove(process.HTXSCategoryTable)"
 ```
 
 The CMSSW area that has been set up in the previous step already includes a useful tool that extracts the coefficients of the polynomial fit.
