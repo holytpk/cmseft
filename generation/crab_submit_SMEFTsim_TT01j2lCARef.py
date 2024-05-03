@@ -14,7 +14,7 @@ config.JobType.scriptExe = 'nanogen_TT01j2lCARef.sh'
 config.JobType.allowUndistributedCMSSW=True
 
 config.Data.splitting = 'EventBased'
-config.Data.unitsPerJob = 10000
+config.Data.unitsPerJob = 1000
 config.Data.totalUnits = 1000000
 config.Data.splitting = 'Automatic'
 config.Data.publication = True
