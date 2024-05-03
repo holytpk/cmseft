@@ -1,4 +1,4 @@
-rom CRABClient.UserUtilities import config#, getUsername
+from CRABClient.UserUtilities import config#, getUsername
 config = config()
 
 config.General.requestName = 'TT01j2lCARef'
