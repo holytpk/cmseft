@@ -168,7 +168,7 @@ echo -e "]\nprocess.genWeightsTable.namedWeightIDs = named_weights\nprocess.genW
 Producing NanoGEN is fairly fast, and a few thousand events can usually be produced locally like
 
 ``` bash
-cmsRun nanogen_cfg.py
+cmsRun nanogen_TT01j2lCARef_cfg.py
 ```
 
 #### Checking the weights
