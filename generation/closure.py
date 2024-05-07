@@ -21,14 +21,14 @@ if __name__ == '__main__':
     args = argParser.parse_args()
 
     events_fixed = NanoEventsFactory.from_root(
-        'root://cmseos.fnal.gov//store/user/dspitzba/EFT/nanogen_fixed_123.root',
+        '/uscms_data/d3/he614/cmseft/generation/nanogen_TT01j2lCARef.root',
         schemaclass=NanoAODSchema,
     ).events()
     nevents_fixed = len(events_fixed.LHEWeight)
 
 
     events_reweighted = NanoEventsFactory.from_root(
-        'root://cmseos.fnal.gov//store/user/dspitzba/EFT/nanogen_123.root',
+        '/uscms_data/d3/he614/cmseft/generation/nanogen_TT01j2lCARef.root',
         schemaclass=NanoAODSchema,
     ).events()
     nevents_reweighted = len(events_reweighted.LHEWeight)
@@ -42,7 +42,7 @@ if __name__ == '__main__':
 
     h_reweighted.fill(
         ht=ak.sum(events_reweighted.GenJet.pt, axis=1),
-        weight=getattr(events_reweighted.LHEWeight, 'EFTrwgt10_ctGRe_2.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0'),
+        weight=getattr(events_reweighted.LHEWeight, 'EFTrwgt17_ctGRe_2.0_ctGIm_0.0_cQj18_0.0_cQj38_0.0_cQj11_0.0_cQj31_0.0_ctu8_0.0_ctd8_0.0_ctj8_0.0_cQu8_0.0_cQd8_0.0_ctu1_0.0_ctd1_0.0_ctj1_0.0_cQu1_0.0_cQd1_0.0'),
     )
 
     h_fixed = hist.Hist(

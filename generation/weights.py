@@ -17,7 +17,7 @@ if __name__ == '__main__':
     import argparse
 
     argParser = argparse.ArgumentParser(description = "Argument parser")
-    argParser.add_argument('--input', action='store', default='root://cmseos.fnal.gov//store/user/dspitzba/EFT/nanogen_small.root', help="Input file")
+    argParser.add_argument('--input', action='store', default='/uscms_data/d3/he614/cmseft/generation/nanogen_TT01j2lCARef.root', help="Input file")
     argParser.add_argument('--output', action='store', default='./weights.pdf', help="Output file")
     args = argParser.parse_args()
 
@@ -35,11 +35,11 @@ if __name__ == '__main__':
     h_SM.fill(weight_ax=getattr(events.LHEWeight, eft_weight_names[0]))
 
     h_ctg1 = hist.Hist(weight_axis)
-    h_ctg1.fill(weight_ax=getattr(events.LHEWeight, 'EFTrwgt1_ctGRe_1.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0'))
+    h_ctg1.fill(weight_ax=getattr(events.LHEWeight, 'EFTrwgt1_ctGRe_1.0_ctGIm_0.0_cQj18_0.0_cQj38_0.0_cQj11_0.0_cQj31_0.0_ctu8_0.0_ctd8_0.0_ctj8_0.0_cQu8_0.0_cQd8_0.0_ctu1_0.0_ctd1_0.0_ctj1_0.0_cQu1_0.0_cQd1_0.0'))
 
     # EFTrwgt10_ctGRe_2.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0
     h_ctg2 = hist.Hist(weight_axis)
-    h_ctg2.fill(weight_ax=getattr(events.LHEWeight, 'EFTrwgt10_ctGRe_2.0_ctGIm_0.0_ctWRe_0.0_ctWIm_0.0_ctBRe_0.0_ctBIm_0.0_cHtbRe_0.0_cHtbIm_0.0_cHt_0.0'))
+    h_ctg2.fill(weight_ax=getattr(events.LHEWeight, 'EFTrwgt17_ctGRe_2.0_ctGIm_0.0_cQj18_0.0_cQj38_0.0_cQj11_0.0_cQj31_0.0_ctu8_0.0_ctd8_0.0_ctj8_0.0_cQu8_0.0_cQd8_0.0_ctu1_0.0_ctd1_0.0_ctj1_0.0_cQu1_0.0_cQd1_0.0'))
 
 
     fig, ax = plt.subplots()
