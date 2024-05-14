@@ -12,7 +12,7 @@ interactive machine, e.g. [FNAL LPC](https://uscms.org/uscms_at_work/physics/com
 
 To start, please clone this repository in a directory that has sufficient quota for the tutorial (at least 50GB),
 ```bash
-git clone git@github.com:FNALLPC/cmseft2023.git
+git clone git@github.com:holytpk/cmseft.git
 ```
 
 ## Generation
@@ -29,7 +29,7 @@ source /cvmfs/cms.cern.ch/cmsset_default.sh
 export SCRAM_ARCH=slc7_amd64_gcc700
 voms-proxy-init -voms cms -valid 192:00
 cd generation
-. setup.sh
+source install_cmssw_10_6_27.sh
 ```
 this sets up the CMS [genproductions](https://github.com/cms-sw/genproductions) git repository
 and a local copy of `CMSSW_10_6_26` with additional NanoGEN tools to record EFT weights.
@@ -48,7 +48,7 @@ Alternative generators include SMEFT@NLO, Dim6Top, etc.
 ### Creating the gridpack
 We will start by creating a gridpack. Start in a fresh terminal window.
 
-Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. Add a new model SMEFTsim_topU3l_MwScheme 
+Find the files under `genproductions/bin/MadGraph5_aMCatNLO`, Take a look at gridpack_generation.sh. If the UFO model is not there already (I think it exists in my current branch), add a new model SMEFTsim_topU3l_MwScheme 
 ```bash
 cp diagram_generation.sh genproductions/bin/MadGraph5_aMCatNLO/
 cd genproductions/bin/MadGraph5_aMCatNLO/
