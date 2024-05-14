@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d genproductions ]; then
-  git clone https://github.com/holytpk/genproductions -b dileptonic
+  git clone https://github.com/holytpk/genproductions -b nanogen
 fi
 
 # in case this is not already done, setup cms packaging commands
